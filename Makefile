@@ -22,17 +22,21 @@ BOOST_SERIALIZATION = $(BOOST_LIBS)/libboost_serialization.a
 OBJS = $(patsubst %.cc, %.o, $(wildcard *.cc))
 
 # program name
-TARGET = cserver tclient
+TARGET = main tclient
 
+OBJSTC = tclient.o tracker_client.o udpSender.o serialization.o
+OBJSCS = main.o cserver.o position.o
+
+bin: $(TARGET)
 
 $(OBJS): %.o: %.cc
 	$(CC) -c $< $(CFLAGS) $(BOOST_INCLUDE) -o $@
 
-cserver: $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) $(BOOST_INCLUDE) -o $@
+main: $(OBJS)
+	$(CC) $(OBJSCS) $(CFLAGS) $(BOOST_INCLUDE) $(BOOST_SYSTEM) $(PTHREAD) -o $@
 
 tclient: $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(BOOST_INCLUDE) $(BOOST_SYSTEM) $(PTHREAD) -o $@
+	$(CC) $(CFLAGS) $(OBJSTC) $(BOOST_INCLUDE) $(BOOST_SYSTEM) $(PTHREAD) -o $@
 
 clean:
 	$(RM) $(OBJS) $(TARGET)
