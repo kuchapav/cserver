@@ -59,7 +59,7 @@ int main(int argc, char* argv[]) {
    imr::STrackedObject obj;
 
    boost::asio::io_service io_service;
-   udpSender sender(io_service, "localhost");
+   udpSender sender(io_service, "localhost", "122");
 
    if (BLOCKING_READ) {
       //An example of blocked receiving

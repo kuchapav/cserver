@@ -1,9 +1,10 @@
 #include "udpSender.h"
 
-udpSender::udpSender(boost::asio::io_service& io_service_, const std::string host_) 
+udpSender::udpSender(boost::asio::io_service& io_service_, const std::string host_, const std::string port_) 
 	: host(host_),
+	  port(port_),
 	  resolver(io_service_),
-	  query(boost::asio::ip::udp::v4(), host_, "daytime"),
+	  query(boost::asio::ip::udp::v4(), host_, port_),
 	  receiver_endpoint(*resolver.resolve(query)),
 	  socket(io_service_)
 {
