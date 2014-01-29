@@ -14,32 +14,32 @@
 
 	}
 
-	// kalman::kalman(mat x_, mat P_, mat K_, mat z_)
-	// 	:	x(x_), P(P_), K(K_), z(z_),
-	// 		A(getA()),
-	// 		Q(0.025 * uBlast::identity_matrix<double>(6)),
-	// 		H(getH()),
-	// 		S1(4 * uBlast::identity_matrix<double>(7)),
-	// 		S2(36 * uBlast::identity_matrix<double>(7))
-	// {
+	kalman::kalman(mat x_, mat P_, mat K_, mat z_)
+		:	x(x_), P(P_), K(K_), z(z_),
+			A(getA()),
+			Q(0.025 * uBlast::identity_matrix<double>(6)),
+			H(getH()),
+			S1(4 * uBlast::identity_matrix<double>(7)),
+			S2(36 * uBlast::identity_matrix<double>(7))
+	{
 
-	// }
+	}
 
-	// kalman::kalman(mat A_, mat Q_, mat H_, mat S1_, mat S2_)
-	// 	:	A(A_), Q(Q_), H(H_), S1(S1_), S2(S2_), 
-	// 		x(uBlast::scalar_matrix<double>(6, 1)), 
-	// 		P(uBlast::identity_matrix<double>(6)), 
-	// 		K(uBlast::matrix<double>(6, 6)), 
-	// 		z(uBlast::matrix<double>(3, 1))
-	// {
+	kalman::kalman(mat A_, mat Q_, mat H_, mat S1_, mat S2_)
+		:	A(A_), Q(Q_), H(H_), S1(S1_), S2(S2_), 
+			x(uBlast::scalar_matrix<double>(6, 1)), 
+			P(uBlast::identity_matrix<double>(6)), 
+			K(uBlast::matrix<double>(6, 6)), 
+			z(uBlast::matrix<double>(3, 1))
+	{
 
-	// }
+	}
 
-	// kalman::kalman(mat A_, mat Q_, mat H_, mat S1_, mat S2_, mat x_, mat P_, mat K_, mat z_)
-	// 	:	A(A_), Q(Q_), H(H_), S1(S1_), S2(S2_), x(x_), P(P_), K(K_), z(z_)
-	// {
+	kalman::kalman(mat A_, mat Q_, mat H_, mat S1_, mat S2_, mat x_, mat P_, mat K_, mat z_)
+		:	A(A_), Q(Q_), H(H_), S1(S1_), S2(S2_), x(x_), P(P_), K(K_), z(z_)
+	{
 
-	// }
+	}
 
 	kalman::~kalman()
 	{

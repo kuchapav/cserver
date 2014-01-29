@@ -16,9 +16,9 @@ class kalman
 
 public:
 	kalman();
-	// kalman(mat x, mat P, mat K, mat R, mat z);
-	// kalman(mat A, mat Q, mat H, mat S1, mat S2);
-	// kalman(mat A, mat Q, mat H, mat S1, mat S2, mat x, mat P, mat K, mat R, mat z);
+	kalman(mat x_, mat P_, mat K_, mat z_);
+	kalman(mat A_, mat Q_, mat H_, mat S1_, mat S2_);
+	kalman(mat A_, mat Q_, mat H_, mat S1_, mat S2_, mat x_, mat P_, mat K_, mat z_);
 	~kalman();
 	position getNewPosition(position pos1, position pos2);
 
