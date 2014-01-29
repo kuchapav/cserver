@@ -32,7 +32,7 @@ void terminate_handler(int sig) {
 /// ----------------------------------------------------------------------------
 void send_object(udpSender& sender, unsigned long id, unsigned long time, const imr::STrackedObject& trackedObj) {
    std::tuple<unsigned long, unsigned long, imr::STrackedObject> sendData = std::make_tuple(id, time, trackedObj);
-   sender.send(sendData);
+   sender.send_camData(sendData);
 }
 
 /// - main function ------------------------------------------------------------

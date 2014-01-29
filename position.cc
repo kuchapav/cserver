@@ -23,21 +23,21 @@ template<class Archive>
     }
 
 void position::printData() {
-    std::cout << "id" << TOid << std::endl
-              << "time" << time << std::endl
-              << "X:" << x << std::endl
-              << "Y:" << y << std::endl
-              << "Z:" << z << std::endl
-              << "pitch:" << pitch << std::endl
-              << "roll:" << roll << std::endl
-              << "yaw:" << yaw << std::endl
-              << "Tracked Object valid:" << trackedObj.valid << std::endl
-              << "Tracked Object X:" << trackedObj.x << std::endl
-              << "Tracked Object Y:" << trackedObj.y << std::endl
-              << "Tracked Object Z:" << trackedObj.y << std::endl
-              << "Tracked Object pitch:" << trackedObj.pitch << std::endl
-              << "Tracked Object roll:" << trackedObj.roll << std::endl
-              << "Tracked Object yaw:" << trackedObj.yaw << std::endl
-              << "Tracked Object pixel_ratio:" << trackedObj.pixel_ratio << std::endl
-              << "Tracked Object bw_ratio:" << trackedObj.bw_ratio << std::endl;
+    std::cout << "id: " << TOid << std::endl
+              << "time: " << time << std::endl
+              << "X: " << x << std::endl
+              << "Y: " << y << std::endl
+              << "Z: " << z << std::endl
+              << "pitch: " << pitch << std::endl
+              << "roll: " << roll << std::endl
+              << "yaw: " << yaw << std::endl
+              << "Tracked Object valid: " << trackedObj.valid << std::endl
+              << "Tracked Object X: " << trackedObj.x << std::endl
+              << "Tracked Object Y: " << trackedObj.y << std::endl
+              << "Tracked Object Z: " << trackedObj.y << std::endl
+              << "Tracked Object pitch: " << trackedObj.pitch << std::endl
+              << "Tracked Object roll: " << trackedObj.roll << std::endl
+              << "Tracked Object yaw: " << trackedObj.yaw << std::endl
+              << "Tracked Object pixel_ratio: " << trackedObj.pixel_ratio << std::endl
+              << "Tracked Object bw_ratio: " << trackedObj.bw_ratio << std::endl;
   }

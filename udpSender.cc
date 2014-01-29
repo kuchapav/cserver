@@ -16,9 +16,14 @@ udpSender::~udpSender(void)
 
 }
 
-void udpSender::send(std::tuple<unsigned long, unsigned long, imr::STrackedObject> data)
+void udpSender::send_camData(std::tuple<unsigned long, unsigned long, imr::STrackedObject> data)
 {
-	std::cout << "Something sexy" << std::endl;
 	boost::array<std::tuple<unsigned long, unsigned long, imr::STrackedObject>, 1> send_buf  = {{ data }};
+	socket.send_to(boost::asio::buffer(send_buf), receiver_endpoint);
+}
+
+void udpSender::send_posData(position data)
+{
+	boost::array<position, 1> send_buf  = {{ data }};
 	socket.send_to(boost::asio::buffer(send_buf), receiver_endpoint);
 }

@@ -6,13 +6,15 @@
 
 #include <tuple>
 #include "tracked_object.h"
+#include "position.h"
 
 class udpSender
 {
 public:
 	udpSender(boost::asio::io_service& io_service, const std::string host_, const std::string port_);
 	~udpSender(void);
-	void send(std::tuple<unsigned long, unsigned long, imr::STrackedObject> data);
+	void send_camData(std::tuple<unsigned long, unsigned long, imr::STrackedObject> data);
+	void send_posData(position data);
 
 private:
 	const std::string host, port;
