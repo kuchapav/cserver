@@ -10,6 +10,7 @@
 #include "tracked_object.h"
 #include "position.h"
 #include "udpSender.h"
+#include "kalman.h"
 
 using boost::asio::ip::udp;
 
@@ -33,6 +34,7 @@ private:
   boost::array<position, 1> pos_recv_buffer;
   position pos;
   udpSender pos_sender;
+  kalman kalman_filter;
 };
 
 

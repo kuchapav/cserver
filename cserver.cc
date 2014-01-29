@@ -6,7 +6,8 @@ cserver::cserver(boost::asio::io_service& io_service, position init)
     : socket_cam(io_service, udp::endpoint(udp::v4(), 122)),
       pos(init),
       socket_pos(io_service, udp::endpoint(udp::v4(), 123)),
-      pos_sender(io_service, "191.168.1.103", "123")
+      pos_sender(io_service, "191.168.1.103", "123"),
+      kalman_filter()
     {
       start_receive();
     }
@@ -58,9 +59,8 @@ void cserver::handle_pos_receive(const boost::system::error_code& error, std::si
   {
     if (!error)
       {
-        // position pos_ = pos_recv_buffer;
-
-        // pos_.printData();
+        position recieved_pos = *pos_recv_buffer.data();
+        pos = kalman_filter.getNewPosition(pos, recieved_pos);
 
         start_receive();
       }

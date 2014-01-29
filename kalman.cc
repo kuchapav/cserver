@@ -71,7 +71,7 @@
 		return H;
 	}
 
-	bool InvertMatrix(const uBlast::matrix<double>& input, uBlast::matrix<double>& inverse)
+	bool kalman::InvertMatrix(const uBlast::matrix<double>& input, uBlast::matrix<double>& inverse)
 	{
 		using namespace uBlast;
 		typedef permutation_matrix<std::size_t> pmatrix;
@@ -139,6 +139,7 @@
 
 		tmpProd = prod(P, trans(H));
 		tmpProd = prod(H, tmpProd);
+		
 		InvertMatrix(tmpProd + R,inv);
 
 		tmpProd = prod(trans(H), inv);

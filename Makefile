@@ -25,7 +25,7 @@ OBJS = $(patsubst %.cc, %.o, $(wildcard *.cc))
 TARGET = main tclient
 
 OBJSTC = tclient.o tracker_client.o udpSender.o serialization.o
-OBJSCS = main.o cserver.o position.o udpSender.o
+OBJSCS = main.o cserver.o position.o udpSender.o kalman.o
 
 bin: $(TARGET)
 
