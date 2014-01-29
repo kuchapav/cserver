@@ -3,7 +3,7 @@
 using boost::asio::ip::udp;
 
 cserver::cserver(boost::asio::io_service& io_service, position init)
-    : socket_(io_service, udp::endpoint(udp::v4(), 13)),
+    : socket_(io_service, udp::endpoint(udp::v4(), 122)),
       pos(init)
     {
       start_receive();
